@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<input type="text" id="ngaythang">
+
+    <button onclick="tinhNgay()">TÍNH NGÀY</button>
+    
+    <p id="ketqua"></p>
+    <script>
+        function tinhNgay() {
+
+let a = document.getElementById("ngaythang").value;
+
+if(a == 1 || a == 3 || a == 5 || a == 7 || a == 8 || a == 10 || a == 12){
+    result = "tháng" + a + "có 31 ngày"
+}else if (a == 4 || a == 6 || a == 9 || a == 11){
+    result = "tháng" + a + "có 30 ngày"
+}else if(a == 2){
+    result = "tháng" + a + "có 28 hoặc 29 ngày"
+}else{
+    result = "bạn nhập ngu như bò"
+}
+
+document.getElementById("ketqua").innerText = result
+            
+        }
+    </script>
+</body>
+</html>
