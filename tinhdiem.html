@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tính tổng điểm và điểm khu vực</h1>
+    <label for="diem-toan">Điểm môn Toán:</label>
+    <input type="number" id="diem-toan"><br>
+
+    <label for="diem-van">Điểm môn Văn:</label>
+    <input type="number" id="diem-van"><br>
+
+    <label for="diem-anh">Điểm môn Anh:</label>
+    <input type="number" id="diem-anh"><br>
+
+    <label for="khu-vuc">Khu vực:</label>
+    <select id="khu-vuc">
+        <option value="KV1">KV1</option>
+        <option value="KV2-NT">KV2-NT</option>
+        <option value="KV2">KV2</option>
+        <option value="KV3">KV3</option>
+    </select><br>
+
+    <button onclick="tinhTongDiem()">Tính tổng điểm</button>
+
+    <p id="tong-diem"></p>
+    <script>
+       
+       function tinhTongDiem() {
+        var diemToan = parseFloat(document.getElementById("diem-toan").value);
+        var diemVan = parseFloat(document.getElementById("diem-van").value);
+        var diemAnh = parseFloat(document.getElementById("diem-anh").value);
+        var khuVuc = document.getElementById("khu-vuc").value;
+
+        var tongDiemKhu = 0;
+        if(khuVuc === "KV1"){
+          tongDiemKhu = 0.75;
+        }else if(khuVuc === "KV2"){
+          tongDiemKhu = 0.5;
+        } else if(khuVuc === "KV2-NT"){
+          tongDiemKhu = 0.25;
+        }else if(khuVuc === "KV3"){
+          tongDiemKhu = 0;
+        }
+
+        var  tongDiem = diemToan + diemVan + diemAnh + tongDiemKhu;
+
+      document.getElementById("tong-diem").innerText = "tổng điểm" + tongDiem;
+       }
+
+    </script>
+</body>
+</html>
